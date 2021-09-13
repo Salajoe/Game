@@ -18,16 +18,25 @@ public class Game {
      * @param args the command line arguments
      */
 public static void main(String[] args) {
+        int attempt = 0;
         Random random = new Random ();
         Scanner scanner = new Scanner(System.in);
         int number = random.nextInt(9-0+1)+0;
         System.out.println("Pogramma zapomnila chisla ot 0 do 9, ugadaj");
-        int userNumber = scanner.nextInt();
-        if(number == userNumber){
-            System.out.println("Ura! Tq vqigral!!");
-        }else{
-            System.out.println(":(,nepravilno. Zadumano chislo: "+number);
+        for(int i = 0; i < 3; i++){
+            int userNumber = scanner.nextInt();
+            if(number == userNumber){
+                System.out.println("Ura! Tq vqigral!!");
+                break;          
+            }else{
+                if(attempt <3){
+                System.out.println(":(, nepravilno. Poprobuj edhe raz");
+             }else{
+                System.out.println("Ura! Tq proigral");
+             }           
+         }
+         attempt++;
         }
     }
-    
 }
+        
