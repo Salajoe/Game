@@ -23,16 +23,18 @@ public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = random.nextInt(9-0+1)+0;
         System.out.println("Pogramma zapomnila chisla ot 0 do 9, ugadaj");
-        for(int i = 0; i < 3; i++){
+//        for(int i = 0; i < 3; i++){
+        while(true){
             int userNumber = scanner.nextInt();
             if(number == userNumber){
                 System.out.println("Ura! Tq vqigral!!");
                 break;          
             }else{
-                if(attempt <3){
+                if(attempt <2){
                 System.out.println(":(, nepravilno. Poprobuj edhe raz");
              }else{
                 System.out.println("Ura! Tq proigral");
+                break;
              }           
          }
          attempt++;
